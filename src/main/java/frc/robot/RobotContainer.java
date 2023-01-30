@@ -6,10 +6,12 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
+import frc.robot.commands.DriveToTrackedTargetCommand;
 import frc.robot.commands.DriveWithJoystickCommand;
 import frc.robot.subsystems.DrivetrainSubsystem;
 import frc.robot.subsystems.VisionSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -32,7 +34,6 @@ public class RobotContainer {
     configureButtonBindings();
     drivetrainSubsystem.setDefaultCommand(driveWithJoystickCommand);
 
-    
   }
 
   /**
@@ -41,7 +42,9 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing it to a {@link
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
-  private void configureButtonBindings() {}
+  private void configureButtonBindings() {
+    new Trigger(() -> xboxController.getRawButton(Constants.B_BUTTON)).whileTrue(new DriveToTrackedTargetCommand(2, true));
+  }
 
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.

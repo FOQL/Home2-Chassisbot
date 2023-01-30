@@ -17,7 +17,7 @@ import edu.wpi.first.math.util.Units;
 public final class Constants {
 
     // Physical Robot Constants //
-    public static double trackWidth = 2;
+    public static double trackWidth = Units.inchesToMeters(24);
 
     // Victor PWM Ports //
     public static final int leftMotor1CANID = 1;
@@ -30,18 +30,15 @@ public final class Constants {
     public static final double TARGET_HEIGHT_METERS = Units.inchesToMeters(18.5);
     public static final double CAMERA_PITCH_RADIANS = Units.degreesToRadians(18);
     public static final String USB_CAMERA_NAME = null;
+    public static final double TRACKED_TAG_ROATION_KP = 0.0175;
+    public static final double TRACKED_TAG_AREA_DRIVE_KP = 0.2;
+    public static final double TRACKED_TAG_DISTANCE_DRIVE_KP = 0.3;
+    public static final double APRILTAG_POWER_CAP = 0.75;
 
     // Controller Input Axes //
     public static final int LEFT_VERTICAL_JOYSTICK_AXIS = 1;
     public static final int RIGHT_VERTICAL_JOYSTICK_AXIS = 3;
     public static final int RIGHT_HORIZONTAL_JOYSTICK_AXIS = 2;
-
-    public static final double TRACKED_TAG_ROATION_KP = 0;
-
-    public static final double TRACKED_TAG_AREA_DRIVE_KP = 0;
-
-    public static final double TRACKED_TAG_DISTANCE_DRIVE_KP = 0;
-
-    public static final double APRILTAG_POWER_CAP = 0;
+    public static final int B_BUTTON = 0;
      
     }
